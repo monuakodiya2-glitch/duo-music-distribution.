@@ -1,0 +1,1 @@
+<?php get_header(); ?><main class="content-area"><div class="container"><div class="eyebrow">404 error</div><h1>That track couldn't be found.</h1><p class="muted">The page may have moved or the link may be incorrect.</p><a class="btn" href="<?php echo esc_url(home_url('/')); ?>">Back to Home</a></div></main><?php get_footer(); ?>
