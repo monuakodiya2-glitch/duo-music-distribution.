@@ -1,21 +1,31 @@
-DUO MUSIC DISTRIBUTION — WORDPRESS THEME
-========================================
+DUO ARTIST PORTAL PLUGIN
+========================
 
 INSTALL
-1. In WordPress admin, go to Appearance → Themes → Add New Theme → Upload Theme.
-2. Upload duo-music-distribution.zip and click Install Now.
-3. Activate the theme.
-4. The theme creates the starter pages: Home, Music Distribution, Pricing, Artist Dashboard, Submit a Release, About Us, Contact.
-5. Go to Settings → General and set the Site Title and Administration Email.
-6. Go to Settings → Permalinks and choose “Post name”, then Save Changes.
-7. Check each page and edit its copy/pricing before launch.
+1. In WordPress Admin go to Plugins → Add New Plugin → Upload Plugin.
+2. Upload duo-artist-portal.zip, click Install Now, then Activate.
+3. Plugin creates Artist Register, Artist Dashboard, and Submit a Release pages if those slugs do not already exist.
+4. If a page already exists, edit it and add the corresponding shortcode:
+   Artist Register: [duo_artist_register]
+   Artist Dashboard: [duo_artist_dashboard]
+   Submit a Release: [duo_artist_release_upload]
+5. The plugin adds a WordPress Admin menu called Artist Releases. Admins can review submissions and change status in the Distribution Review Status box.
+6. If your theme already created a Submit a Release page, edit its content and replace the old shortcode with [duo_artist_release_upload].
+7. For public registration, this plugin provides its own registration form. Keep WordPress core public registration disabled unless you have a reason to enable it.
 
-IMPORTANT
-- This is a starter theme, not a complete commercial distribution platform.
-- The release submission form saves private release records in WordPress and emails the site admin. It does not upload audio or deliver music to stores.
-- Dashboard stats are placeholders. Royalty reporting, artist self-registration workflows, secure audio/artwork uploads, payments, contracts, tax handling, and store delivery require additional development and service integrations.
-- Pricing is sample content; replace it with your actual pricing and terms.
-- Configure SMTP with a reputable WordPress SMTP plugin for reliable email delivery.
-- Add a privacy policy, terms of service, copyright/rights policy, refund policy and support details before accepting real customers.
-- Use HTTPS, backups, updates, least-privilege user roles, spam protection and security monitoring.
-- Do not claim official Spotify/Apple Music partnerships unless you have them.
+WHAT IT DOES
+- Artist account registration and login.
+- Artist-only release dashboard.
+- Audio upload (MP3, WAV, M4A, FLAC; 100 MB maximum) and JPG/PNG cover art (10 MB maximum).
+- Release details saved as private WordPress records.
+- Admin status options: Pending Review, Approved, Rejected, Needs Changes, Delivered.
+- Email notifications depend on your hosting mail setup.
+
+IMPORTANT SECURITY / BUSINESS NOTES
+- WordPress and server upload limits may be lower than the plugin limits. Configure PHP upload_max_filesize and post_max_size accordingly.
+- Files are stored in WordPress Media Library and may be accessible by direct URL depending on your hosting setup. For unreleased commercial music, configure private object storage and signed URLs/access controls before launching publicly at scale.
+- Use HTTPS, backups, security updates, anti-spam/rate limiting, strong passwords and a reliable SMTP plugin.
+- Add privacy policy, Terms of Service, rights/ownership confirmation, takedown procedure, refund and royalty terms before launch.
+- Never accept content the artist doesn't own or have permission to distribute.
+- This plugin does not distribute audio to Spotify, Apple Music, YouTube Music or any other platform. Delivery requires a real distribution partner/API and a separate operational process.
+- Test uploads on a staging site first.
